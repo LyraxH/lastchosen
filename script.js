@@ -237,7 +237,7 @@ var trainXPosition = 0 // width = 282
 var trainYPosition = 0 // hieght = 357
 
 //variables for things in the tent
-var tentExit = loadSecureAsset('tent/Exit.png')
+var tentExit = loadSecureAsset('tent/exit.png')
 var bullitin = loadSecureAsset('tent/bullitin.png')
 var drawers = loadSecureAsset('tent/drawers.png')
 
@@ -381,7 +381,7 @@ var PL1 = loadSecureAsset('health/35HP/P1.png')
 var PL0 = loadSecureAsset('health/35HP/P0.png')
 //#endregion
 // extra images
-var interactButton = loadSecureAsset('extraResources/interactButton.png')
+var interactButton = loadSecureAsset('ExtraResources/interactButton.png')
 //#region main menu buttons + back
 // images and sources for each button   (s = selected, u = unselected)
 var playButtonS = loadSecureAsset('mainMenuText/playSelected.png')
@@ -456,7 +456,7 @@ var officeBackground = loadSecureAsset('backgrounds/office.png')
 var officeBackgroundZ = loadSecureAsset('backgrounds/officeZombie.png')
 var labBackground = loadSecureAsset('backgrounds/Lab.png')
 //starts the canvas when the window opens
-window.onload=startCanvasz
+window.onload=startCanvas
 
 function startCanvas(){
 	ctx=document.getElementById("myCanvas").getContext("2d")
