@@ -1,10 +1,22 @@
 /**
 * Title: pokemon very cool
 * Author: Taison Shea
-* Date: 03/05/22 - 27/06/22
-* Version: 27
+* Date: 03/05/22 - 27/06/22 -> 28/05/26
+* Version: 28
 * Purpose: get me credits.
 **/
+
+var assetsLoaded = 0;
+var totalAssets = 0;
+
+function loadSecureAsset(path) {
+    totalAssets++;
+    var img = new Image();
+    img.onload = function() { assetsLoaded++; };
+    img.onerror = function() { console.error("Could not find file at: " + path); };
+    img.src = './' + path; // Using './' forces relative path parsing on GitHub Pages
+    return img;
+}
 
 const PLAYERWIDTH = 51
 const PLAYERHEIGHT = 74
@@ -106,167 +118,87 @@ var zAttack
 // 45 = it blocked dmg + heal
 // 46 = it only blocked dmg
 //#endregion
-var contiunedDialogue = 0
-var dia34 = new Image()
-dia34.src = 'dialogue/dia34.png'
-var dia35 = new Image()
-dia35.src = 'dialogue/dia35.png'
-var dia36 = new Image()
-dia36.src = 'dialogue/dia36.png'
-var dia37 = new Image()
-dia37.src = 'dialogue/dia37.png'
-var dia38 = new Image()
-dia38.src = 'dialogue/dia38.png'
-var dia39 = new Image()
-dia39.src = 'dialogue/dia39.png'
-var dia40 = new Image()
-dia40.src = 'dialogue/dia40.png'
-var dia0 = new Image()
-dia0.src = 'dialogue/dia0.png'
-var dia3 = new Image()
-dia3.src = 'dialogue/dia3.png'
-var dia4 = new Image()
-dia4.src = 'dialogue/dia4.png'
-var dia5 = new Image()
-dia5.src = 'dialogue/dia5.png'
-var dia8 = new Image()
-dia8.src = 'dialogue/dia8.png'
-var dia9 = new Image()
-dia9.src = 'dialogue/dia9.png'
-var dia10 = new Image()
-dia10.src = 'dialogue/dia10.png'
-var dia11 = new Image()
-dia11.src = 'dialogue/dia11.png'
-var dia12 = new Image()
-dia12.src = 'dialogue/dia12.png'
-var dia18 = new Image()
-dia18.src = 'dialogue/dia18.png'
-var dia19 = new Image()
-dia19.src = 'dialogue/dia19.png'
-var dia20 = new Image()
-dia20.src = 'dialogue/dia20.png'
-var dia21 = new Image()
-dia21.src = 'dialogue/dia21.png'
-var dia23 = new Image()
-dia23.src = 'dialogue/dia23.png'
-var dia24 = new Image()
-dia24.src = 'dialogue/dia24.png'
-var dia26 = new Image()
-dia26.src = 'dialogue/dia26.png'
-var dia32 = new Image()
-dia32.src = 'dialogue/dia32.png'
-var dia33 = new Image()
-dia33.src = 'dialogue/dia33.png'
-var dia42 = new Image()
-dia42.src = 'dialogue/dia42.png'
-var dia43 = new Image()
-dia43.src = 'dialogue/dia43.png'
-var dia44 = new Image()
-dia44.src = 'dialogue/dia44.png'
-var dia45 = new Image()
-dia45.src = 'dialogue/dia45.png'
-var dia46 = new Image()
-dia46.src = 'dialogue/dia46.png'
-var dia47 = new Image()
-dia47.src = 'dialogue/dia47.png'
-var dia48 = new Image()
-dia48.src = 'dialogue/dia48.png'
-var dia49 = new Image()
-dia49.src = 'dialogue/dia49.png'
-
-var dia50 = new Image()
-dia50.src = 'dialogue/dia50.png'
-var dia51 = new Image()
-dia51.src = 'dialogue/dia51.png'
-var dia52 = new Image()
-dia52.src = 'dialogue/dia52.png'
-var dia53 = new Image()
-dia53.src = 'dialogue/dia53.png'
-var dia54 = new Image()
-dia54.src = 'dialogue/dia54.png'
-
-var dia81 = new Image()
-dia81.src = 'dialogue/dia81.png'
-var dia82 = new Image()
-dia82.src = 'dialogue/dia82.png'
-
-var dia700 = new Image()
-dia700.src = 'dialogue/dia700.png'
-var dia701 = new Image()
-dia701.src = 'dialogue/dia701.png'
-
-var yesReady = new Image()
-yesReady.src = 'dialogue/yesReady.png'
-var noReady = new Image()
-noReady.src = 'dialogue/noReady.png'
-var BGxPosition = 0
-var BGyPosition = 0
-var startingStage = 0
+var contiunedDialogue = 0;
+var dia34 = loadSecureAsset('dialogue/dia34.png')
+var dia35 = loadSecureAsset('dialogue/dia35.png')
+var dia36 = loadSecureAsset('dialogue/dia36.png')
+var dia37 = loadSecureAsset('dialogue/dia37.png')
+var dia38 = loadSecureAsset('dialogue/dia38.png')
+var dia39 = loadSecureAsset('dialogue/dia39.png')
+var dia40 = loadSecureAsset('dialogue/dia40.png')
+var dia0 = loadSecureAsset('dialogue/dia0.png')
+var dia3 = loadSecureAsset('dialogue/dia3.png')
+var dia4 = loadSecureAsset('dialogue/dia4.png')
+var dia5 = loadSecureAsset('dialogue/dia5.png')
+var dia8 = loadSecureAsset('dialogue/dia8.png')
+var dia9 = loadSecureAsset('dialogue/dia9.png')
+var dia10 = loadSecureAsset('dialogue/dia10.png')
+var dia11 = loadSecureAsset('dialogue/dia11.png')
+var dia12 = loadSecureAsset('dialogue/dia12.png')
+var dia18 = loadSecureAsset('dialogue/dia18.png')
+var dia19 = loadSecureAsset('dialogue/dia19.png')
+var dia20 = loadSecureAsset('dialogue/dia20.png')
+var dia21 = loadSecureAsset('dialogue/dia21.png')
+var dia23 = loadSecureAsset('dialogue/dia23.png')
+var dia24 = loadSecureAsset('dialogue/dia24.png')
+var dia26 = loadSecureAsset('dialogue/dia26.png')
+var dia32 = loadSecureAsset('dialogue/dia32.png')
+var dia33 = loadSecureAsset('dialogue/dia33.png')
+var dia42 = loadSecureAsset('dialogue/dia42.png')
+var dia43 = loadSecureAsset('dialogue/dia43.png')
+var dia44 = loadSecureAsset('dialogue/dia44.png')
+var dia45 = loadSecureAsset('dialogue/dia45.png')
+var dia46 = loadSecureAsset('dialogue/dia46.png')
+var dia47 = loadSecureAsset('dialogue/dia47.png')
+var dia48 = loadSecureAsset('dialogue/dia48.png')
+var dia49 = loadSecureAsset('dialogue/dia49.png')
+var dia50 = loadSecureAsset('dialogue/dia50.png')
+var dia51 = loadSecureAsset('dialogue/dia51.png')
+var dia52 = loadSecureAsset('dialogue/dia52.png')
+var dia53 = loadSecureAsset('dialogue/dia53.png')
+var dia54 = loadSecureAsset('dialogue/dia54.png')
+var dia81 = loadSecureAsset('dialogue/dia81.png')
+var dia82 = loadSecureAsset('dialogue/dia82.png')
+var dia700 = loadSecureAsset('dialogue/dia700.png')
+var dia701 = loadSecureAsset('dialogue/dia701.png')
+var yesReady = loadSecureAsset('dialogue/yesReady.png')
+var noReady = loadSecureAsset('dialogue/noReady.png')
 
 //#region save screens
-var SavedTooEarly = new Image() // when you try to save in mars
-SavedTooEarly.src = 'inventory/GameSavedTooEarly.png'
-var cantSave = new Image() // trying to save in the office, or in the boss battle area
-cantSave.src = 'inventory/YouCantSaveHere.png'
-var SavedEarthOne = new Image() // when you save on earth stage one without getting a teammate
-SavedEarthOne.src = 'inventory/GameSaved186010.png'
-var SavedEarthOneATK = new Image() // when you save on earth stage one with the attack buff teammate
-SavedEarthOneATK.src = 'inventory/GameSaved186635.png'
-var SavedEarthTwo = new Image() // when you save on earth stage two without any teammates
-SavedEarthTwo.src = 'inventory/GameSaved185656.png'
-var SavedEarthTwoATK = new Image() // saving earth stage two with the attack buff teammate
-SavedEarthTwoATK.src = 'inventory/GameSaved188309.png'
-var SavedEarthTwoDEF = new Image() // saving earth stage two with just the defense buff teammate
-SavedEarthTwoDEF.src = 'inventory/GameSaved188433.png'
-var SavedEarthTwoATKDEF = new Image() // saving earth stage two with both teammates
-SavedEarthTwoATKDEF.src = 'inventory/GameSaved182956.png'
-var SavedTent = new Image() // saving the game in the tent, no attack buff
-SavedTent.src = 'inventory/GameSaved188565.png'
-var savedTentATK = new Image() // saving the game in the tent, attack buff present
-savedTentATK.src = 'inventory/GameSaved188239.png'
-var savedTrain = new Image() // saving in train no buffs
-savedTrain.src = 'inventory/GameSaved184372.png'
-var savedTrainATK = new Image() // saving train with ATK Buffs
-savedTrainATK.src = 'inventory/GameSaved187812.png'
-var savedTrainDef = new Image() // saving train just defence buff
-savedTrainDef.src = 'inventory/GameSaved186902.png'
-var savedTrainATKDEF = new Image() // saving train with both buffs
-savedTrainATKDEF.src = 'inventory/GameSaved186891.png'
-var savedOverATK = new Image() // both attack and defense buffs
-savedOverATK.src = 'inventory/GameSaved2018215.png'
-var savedOverDef = new Image() // no attack buff just defense buff
-savedOverDef.src = 'inventory/GameSaved21214619.png'
-var tysmforplaying = new Image()
-tysmforplaying.src = 'ExtraResources/tyforplaying.png'
+var SavedTooEarly = loadSecureAsset('inventory/GameSavedTooEarly.png')
+var cantSave = loadSecureAsset('inventory/YouCantSaveHere.png')
+var SavedEarthOne = loadSecureAsset('inventory/GameSaved186010.png')
+var SavedEarthOneATK = loadSecureAsset('inventory/GameSaved186635.png')
+var SavedEarthTwo = loadSecureAsset('inventory/GameSaved185656.png')
+var SavedEarthTwoATK = loadSecureAsset('inventory/GameSaved188309.png')
+var SavedEarthTwoDEF = loadSecureAsset('inventory/GameSaved188433.png')
+var SavedEarthTwoATKDEF = loadSecureAsset('inventory/GameSaved182956.png')
+var SavedTent = loadSecureAsset('inventory/GameSaved188565.png')
+var savedTentATK = loadSecureAsset('inventory/GameSaved188239.png')
+var savedTrain = loadSecureAsset('inventory/GameSaved184372.png')
+var savedTrainATK = loadSecureAsset('inventory/GameSaved187812.png')
+var savedTrainDef = loadSecureAsset('inventory/GameSaved186902.png')
+var savedTrainATKDEF = loadSecureAsset('inventory/GameSaved186891.png')
+var savedOverATK = loadSecureAsset('inventory/GameSaved2018215.png')
+var savedOverDef = loadSecureAsset('inventory/GameSaved21214619.png')
+var tysmforplaying = loadSecureAsset('ExtraResources/tyforplaying.png')
 //#endregion
 //#region teammates
-var team0 = new Image() // just you
-team0.src = 'inventory/team0.png'
-var team1 = new Image() // just atk
-team1.src = 'inventory/team1.png'
-var team2 = new Image() // just def
-team2.src = 'inventory/team2.png'
-var team3 = new Image() // all three
-team3.src = 'inventory/team3.png'
+var team0 = loadSecureAsset('inventory/team0.png')
+var team1 = loadSecureAsset('inventory/team1.png')
+var team2 = loadSecureAsset('inventory/team2.png')
+var team3 = loadSecureAsset('inventory/team3.png')
 //#endregion
 
 // variables for the house in the game
-var houseBackground = new Image()
-houseBackground.src = 'insideHouse/insidehouse.png'
-var houseDoor = new Image()
-houseDoor.src = 'insideHouse/door.png'
-var houseStairs = new Image()
-houseStairs.src = 'insideHouse/stairs.png'
-var houseBed = new Image()
-houseBed.src = 'insideHouse/bed.png'
-var tvOff = new Image()
-tvOff.src = 'insideHouse/tvOff.png'
-var tvOn = new Image()
-tvOn.src = 'insideHouse/tvOn.png'
-var deskWithNote = new Image()
-deskWithNote.src = 'insideHouse/DeskWithNote.png'
-var note = new Image()
-note.src = 'insideHouse/Note.png'
+var houseBackground = loadSecureAsset('insideHouse/insidehouse.png')
+var houseDoor = loadSecureAsset('insideHouse/door.png')
+var houseStairs = loadSecureAsset('insideHouse/stairs.png')
+var houseBed = loadSecureAsset('insideHouse/bed.png')
+var tvOff = loadSecureAsset('insideHouse/tvOff.png')
+var tvOn = loadSecureAsset('insideHouse/tvOn.png')
+var deskWithNote = loadSecureAsset('insideHouse/DeskWithNote.png')
+var note = loadSecureAsset('insideHouse/Note.png')
 
 var bedXPosition = 0 // width = 210
 var bedYPosition = 0 // height = 102
@@ -280,14 +212,10 @@ var deskXPosition = 0 // width = 182
 var deskYPosition = 0 // height = 54
 
 // variables used for mars in the game
-var marsHouseDoor = new Image()
-marsHouseDoor.src = 'mars/yourHosueDoor.png'
-var marsFoodCafe = new Image()
-marsFoodCafe.src = 'mars/buyFromCafe.png'
-var marsNoteBoard = new Image()
-marsNoteBoard.src = 'mars/noteboard.png'
-var lieutenant = new Image()
-lieutenant.src = 'characters/lieutenant.png'
+var marsHouseDoor = loadSecureAsset('mars/yourHosueDoor.png')
+var marsFoodCafe = loadSecureAsset('mars/buyFromCafe.png')
+var marsNoteBoard = loadSecureAsset('mars/noteboard.png')
+var lieutenant = loadSecureAsset('characters/lieutenant.png')
 
 var noteboardOpen = false
 var marsDoorXPosition = 0 // width = 133
@@ -300,10 +228,8 @@ var lieutenantXPosition = 0 // width = 92
 var lieutenantYPosition = 0 // height = 127
 
 //variables used for earth in game
-var tentEnterance = new Image()
-tentEnterance.src = 'Earth/tentEnterance.png'
-var trainEnterance = new Image()
-trainEnterance.src = 'Earth/trainEnterance.png'
+var tentEnterance = loadSecureAsset('Earth/tentEnterance.png')
+var trainEnterance = loadSecureAsset('Earth/trainEnterance.png')
 
 var tentXPosition = 0 // width = 247
 var tentYPosition = 0  // height = 234
@@ -311,12 +237,9 @@ var trainXPosition = 0 // width = 282
 var trainYPosition = 0 // hieght = 357
 
 //variables for things in the tent
-var tentExit = new Image()
-tentExit.src = 'tent/Exit.png'
-var bullitin = new Image() // i spelt it wrong on purpose dw
-bullitin.src = 'tent/bullitin.png'
-var drawers = new Image()
-drawers.src = 'tent/drawers.png'
+var tentExit = loadSecureAsset('tent/Exit.png')
+var bullitin = loadSecureAsset('tent/bullitin.png')
+var drawers = loadSecureAsset('tent/drawers.png')
 
 var exitxPosition = 0 // width = 18
 var exityPosition = 0 // height = 369
@@ -349,345 +272,191 @@ var computerYPositon = 0
 var tutorialScreen = 0
 
 // image variables for main menu
-var backgroundMenu = new Image() // background for the main menu
-backgroundMenu.src = 'backgrounds/earth.png'
-var backgroundCode = new Image() // background for Enter Code
-backgroundCode.src = 'backgrounds/moon.png'
-var credits = new Image() // credits page
-credits.src = 'backgrounds/credits.png'
-var saveLoaded = new Image() // message that says youve loaded your progress
-saveLoaded.src = 'mainMenuText/1ProgressLoaded.png'
+var backgroundMenu = loadSecureAsset('backgrounds/earth.png')
+var backgroundCode = loadSecureAsset('backgrounds/moon.png')
+var credits = loadSecureAsset('backgrounds/credits.png')
+var saveLoaded = loadSecureAsset('mainMenuText/1ProgressLoaded.png')
 
 // images for the inventory
-var inventoryClosed = new Image()
-inventoryClosed.src = 'inventory/inventoryClosed.png'
-var inventoryTeam = new Image()
-inventoryTeam.src = 'inventory/inventoryTeamSelected.png'
-var inventoryItems = new Image()
-inventoryItems.src = 'inventory/inventoryItemsSelected.png'
-var inventorySave = new Image()
-inventorySave.src = 'inventory/inventorySaveSelected.png'
-var inventoryShield = new Image()
-inventoryShield.src = 'inventory/itemsShield.png'
-var inventoryNothing = new Image()
-inventoryNothing.src = 'inventory/itemsNothing.png'
+var inventoryClosed = loadSecureAsset('inventory/inventoryClosed.png')
+var inventoryTeam = loadSecureAsset('inventory/inventoryTeamSelected.png')
+var inventoryItems = loadSecureAsset('inventory/inventoryItemsSelected.png')
+var inventorySave = loadSecureAsset('inventory/inventorySaveSelected.png')
+var inventoryShield = loadSecureAsset('inventory/itemsShield.png')
+var inventoryNothing = loadSecureAsset('inventory/itemsNothing.png')
+
 // images for the battle
-var attackSelected = new Image()
-attackSelected.src = 'inventory/AttackSelected.png'
-var blockSelected = new Image()
-blockSelected.src = 'inventory/BlockSelected.png'
-var runSelected = new Image()
-runSelected.src = 'inventory/RunSelected.png'
-var cantRun = new Image()
-cantRun.src = 'dialogue/cantRun.png'
+var attackSelected = loadSecureAsset('inventory/AttackSelected.png')
+var blockSelected = loadSecureAsset('inventory/BlockSelected.png')
+var runSelected = loadSecureAsset('inventory/RunSelected.png')
+var cantRun = loadSecureAsset('dialogue/cantRun.png')
 // images for the health bar
 //#region 15 hp health bar
-var HP1 = new Image()
-HP1.src = 'health/15HP/P1.png'
-var HP2 = new Image()
-HP2.src = 'health/15HP/P2.png'
-var HP3 = new Image()
-HP3.src = 'health/15HP/P3.png'
-var HP4 = new Image()
-HP4.src = 'health/15HP/P4.png'
-var HP5 = new Image()
-HP5.src = 'health/15HP/P5.png'
-var HP6 = new Image()
-HP6.src = 'health/15HP/P6.png'
-var HP7 = new Image()
-HP7.src = 'health/15HP/P7.png'
-var HP8 = new Image()
-HP8.src = 'health/15HP/P8.png'
-var HP9 = new Image()
-HP9.src = 'health/15HP/P9.png'
-var HP10 = new Image()
-HP10.src = 'health/15HP/P10.png'
-var HP11 = new Image()
-HP11.src = 'health/15HP/P11.png'
-var HP12 = new Image()
-HP12.src = 'health/15HP/P12.png'
-var HP13 = new Image()
-HP13.src = 'health/15HP/P13.png'
-var HP14 = new Image()
-HP14.src = 'health/15HP/P14.png'
-var HP15 = new Image()
-HP15.src = 'health/15HP/P15.png'
+var HP1 = loadSecureAsset('health/15HP/P1.png')
+var HP2 = loadSecureAsset('health/15HP/P2.png')
+var HP3 = loadSecureAsset('health/15HP/P3.png')
+var HP4 = loadSecureAsset('health/15HP/P4.png')
+var HP5 = loadSecureAsset('health/15HP/P5.png')
+var HP6 = loadSecureAsset('health/15HP/P6.png')
+var HP7 = loadSecureAsset('health/15HP/P7.png')
+var HP8 = loadSecureAsset('health/15HP/P8.png')
+var HP9 = loadSecureAsset('health/15HP/P9.png')
+var HP10 = loadSecureAsset('health/15HP/P10.png')
+var HP11 = loadSecureAsset('health/15HP/P11.png')
+var HP12 = loadSecureAsset('health/15HP/P12.png')
+var HP13 = loadSecureAsset('health/15HP/P13.png')
+var HP14 = loadSecureAsset('health/15HP/P14.png')
+var HP15 = loadSecureAsset('health/15HP/P15.png')
 //#endregion
 //#region 15 hp zombie
-var ZHP15 = new Image()
-ZHP15.src = 'health/15ZHP/Z15.png'
-var ZHP11 = new Image()
-ZHP11.src = 'health/15ZHP/Z11.png'
-var ZHP9 = new Image()
-ZHP9.src = 'health/15ZHP/Z9.png'
-var ZHP8 = new Image()
-ZHP8.src = 'health/15ZHP/Z8.png'
-var ZHP7 = new Image()
-ZHP7.src = 'health/15ZHP/Z7.png'
-var ZHP3 = new Image()
-ZHP3.src = 'health/15ZHP/Z3.png'
-var ZHP1 = new Image()
-ZHP1.src = 'health/15ZHP/Z1.png'
-var ZHP0 = new Image()
-ZHP0.src = 'health/15ZHP/Z0.png'
+var ZHP15 = loadSecureAsset('health/15ZHP/Z15.png')
+var ZHP11 = loadSecureAsset('health/15ZHP/Z11.png')
+var ZHP9 = loadSecureAsset('health/15ZHP/Z9.png')
+var ZHP8 = loadSecureAsset('health/15ZHP/Z8.png')
+var ZHP7 = loadSecureAsset('health/15ZHP/Z7.png')
+var ZHP3 = loadSecureAsset('health/15ZHP/Z3.png')
+var ZHP1 = loadSecureAsset('health/15ZHP/Z1.png')
+var ZHP0 = loadSecureAsset('health/15ZHP/Z0.png')
 //#endregion
 //#region 60 hp zombie
-var Z60 = new Image()
-Z60.src = 'health/80ZHP/Z60.png'
-var Z56 = new Image()
-Z56.src = 'health/80ZHP/Z56.png'
-var Z53 = new Image()
-Z53.src = 'health/80ZHP/Z53.png'
-var Z52 = new Image()
-Z52.src = 'health/80ZHP/Z52.png'
-var Z48 = new Image()
-Z48.src = 'health/80ZHP/Z48.png'
-var Z46 = new Image()
-Z46.src = 'health/80ZHP/Z46.png'
-var Z44 = new Image()
-Z44.src = 'health/80ZHP/Z44.png'
-var Z40 = new Image()
-Z40.src = 'health/80ZHP/Z40.png'
-var Z39 = new Image()
-Z39.src = 'health/80ZHP/Z39.png'
-var Z36 = new Image()
-Z36.src = 'health/80ZHP/Z36.png'
-var Z32 = new Image()
-Z32.src = 'health/80ZHP/Z32.png'
-var Z28 = new Image()
-Z28.src = 'health/80ZHP/Z28.png'
-var Z25 = new Image()
-Z25.src = 'health/80ZHP/Z25.png'
-var Z24 = new Image()
-Z24.src = 'health/80ZHP/Z24.png'
-var Z20 = new Image()
-Z20.src = 'health/80ZHP/Z20.png'
-var Z18 = new Image()
-Z18.src = 'health/80ZHP/Z18.png'
-var Z16 = new Image()
-Z16.src = 'health/80ZHP/Z16.png'
-var Z12 = new Image()
-Z12.src = 'health/80ZHP/Z12.png'
-var Z11 = new Image()
-Z11.src = 'health/80ZHP/Z11.png'
-var Z8 = new Image()
-Z8.src = 'health/80ZHP/Z8.png'
-var Z4 = new Image()
-Z4.src = 'health/80ZHP/Z4.png'
-var Z0 = new Image()
-Z0.src = 'health/80ZHP/Z0.png'
+var Z60 = loadSecureAsset('health/80ZHP/Z60.png')
+var Z56 = loadSecureAsset('health/80ZHP/Z56.png')
+var Z53 = loadSecureAsset('health/80ZHP/Z53.png')
+var Z52 = loadSecureAsset('health/80ZHP/Z52.png')
+var Z48 = loadSecureAsset('health/80ZHP/Z48.png')
+var Z46 = loadSecureAsset('health/80ZHP/Z46.png')
+var Z44 = loadSecureAsset('health/80ZHP/Z44.png')
+var Z40 = loadSecureAsset('health/80ZHP/Z40.png')
+var Z39 = loadSecureAsset('health/80ZHP/Z39.png')
+var Z36 = loadSecureAsset('health/80ZHP/Z36.png')
+var Z32 = loadSecureAsset('health/80ZHP/Z32.png')
+var Z28 = loadSecureAsset('health/80ZHP/Z28.png')
+var Z25 = loadSecureAsset('health/80ZHP/Z25.png')
+var Z24 = loadSecureAsset('health/80ZHP/Z24.png')
+var Z20 = loadSecureAsset('health/80ZHP/Z20.png')
+var Z18 = loadSecureAsset('health/80ZHP/Z18.png')
+var Z16 = loadSecureAsset('health/80ZHP/Z16.png')
+var Z12 = loadSecureAsset('health/80ZHP/Z12.png')
+var Z11 = loadSecureAsset('health/80ZHP/Z11.png')
+var Z8 = loadSecureAsset('health/80ZHP/Z8.png')
+var Z4 = loadSecureAsset('health/80ZHP/Z4.png')
+var Z0 = loadSecureAsset('health/80ZHP/Z0.png')
 //#endregion
 //#region 35 hp player
-var PL35 = new Image()
-PL35.src = 'health/35HP/P35.png'
-var PL34 = new Image()
-PL34.src = 'health/35HP/P34.png'
-var PL33 = new Image()
-PL33.src = 'health/35HP/P33.png'
-var PL32 = new Image()
-PL32.src = 'health/35HP/P32.png'
-var PL31 = new Image()
-PL31.src = 'health/35HP/P31.png'
-var PL30 = new Image()
-PL30.src = 'health/35HP/P30.png'
-var PL29 = new Image()
-PL29.src = 'health/35HP/P29.png'
-var PL28 = new Image()
-PL28.src = 'health/35HP/P28.png'
-var PL27 = new Image()
-PL27.src = 'health/35HP/P27.png'
-var PL26 = new Image()
-PL26.src = 'health/35HP/P26.png'
-var PL25 = new Image()
-PL25.src = 'health/35HP/P25.png'
-var PL24 = new Image()
-PL24.src = 'health/35HP/P24.png'
-var PL23 = new Image()
-PL23.src = 'health/35HP/P23.png'
-var PL22 = new Image()
-PL22.src = 'health/35HP/P22.png'
-var PL21 = new Image()
-PL21.src = 'health/35HP/P21.png'
-var PL20 = new Image()
-PL20.src = 'health/35HP/P20.png'
-var PL19 = new Image()
-PL19.src = 'health/35HP/P19.png'
-var PL18 = new Image()
-PL18.src = 'health/35HP/P18.png'
-var PL17 = new Image()
-PL17.src = 'health/35HP/P17.png'
-var PL16 = new Image()
-PL16.src = 'health/35HP/P16.png'
-var PL15 = new Image()
-PL15.src = 'health/35HP/P15.png'
-var PL14 = new Image()
-PL14.src = 'health/35HP/P14.png'
-var PL13 = new Image()
-PL13.src = 'health/35HP/P13.png'
-var PL12 = new Image()
-PL12.src = 'health/35HP/P12.png'
-var PL11 = new Image()
-PL11.src = 'health/35HP/P11.png'
-var PL10 = new Image()
-PL10.src = 'health/35HP/P10.png'
-var PL9 = new Image()
-PL9.src = 'health/35HP/P9.png'
-var PL8 = new Image()
-PL8.src = 'health/35HP/P8.png'
-var PL7 = new Image()
-PL7.src = 'health/35HP/P7.png'
-var PL6 = new Image()
-PL6.src = 'health/35HP/P6.png'
-var PL5 = new Image()
-PL5.src = 'health/35HP/P5.png'
-var PL4 = new Image()
-PL4.src = 'health/35HP/P4.png'
-var PL3 = new Image()
-PL3.src = 'health/35HP/P3.png'
-var PL2 = new Image()
-PL2.src = 'health/35HP/P2.png'
-var PL1 = new Image()
-PL1.src = 'health/35HP/P1.png'
-var PL0 = new Image()
-PL0.src = 'health/35HP/P0.png'
+var PL35 = loadSecureAsset('health/35HP/P35.png')
+var PL34 = loadSecureAsset('health/35HP/P34.png')
+var PL33 = loadSecureAsset('health/35HP/P33.png')
+var PL32 = loadSecureAsset('health/35HP/P32.png')
+var PL31 = loadSecureAsset('health/35HP/P31.png')
+var PL30 = loadSecureAsset('health/35HP/P30.png')
+var PL29 = loadSecureAsset('health/35HP/P29.png')
+var PL28 = loadSecureAsset('health/35HP/P28.png')
+var PL27 = loadSecureAsset('health/35HP/P27.png')
+var PL26 = loadSecureAsset('health/35HP/P26.png')
+var PL25 = loadSecureAsset('health/35HP/P25.png')
+var PL24 = loadSecureAsset('health/35HP/P24.png')
+var PL23 = loadSecureAsset('health/35HP/P23.png')
+var PL22 = loadSecureAsset('health/35HP/P22.png')
+var PL21 = loadSecureAsset('health/35HP/P21.png')
+var PL20 = loadSecureAsset('health/35HP/P20.png')
+var PL19 = loadSecureAsset('health/35HP/P19.png')
+var PL18 = loadSecureAsset('health/35HP/P18.png')
+var PL17 = loadSecureAsset('health/35HP/P17.png')
+var PL16 = loadSecureAsset('health/35HP/P16.png')
+var PL15 = loadSecureAsset('health/35HP/P15.png')
+var PL14 = loadSecureAsset('health/35HP/P14.png')
+var PL13 = loadSecureAsset('health/35HP/P13.png')
+var PL12 = loadSecureAsset('health/35HP/P12.png')
+var PL11 = loadSecureAsset('health/35HP/P11.png')
+var PL10 = loadSecureAsset('health/35HP/P10.png')
+var PL9 = loadSecureAsset('health/35HP/P9.png')
+var PL8 = loadSecureAsset('health/35HP/P8.png')
+var PL7 = loadSecureAsset('health/35HP/P7.png')
+var PL6 = loadSecureAsset('health/35HP/P6.png')
+var PL5 = loadSecureAsset('health/35HP/P5.png')
+var PL4 = loadSecureAsset('health/35HP/P4.png')
+var PL3 = loadSecureAsset('health/35HP/P3.png')
+var PL2 = loadSecureAsset('health/35HP/P2.png')
+var PL1 = loadSecureAsset('health/35HP/P1.png')
+var PL0 = loadSecureAsset('health/35HP/P0.png')
 //#endregion
 // extra images
-var interactButton = new Image()
-interactButton.src = 'extraResources/interactButton.png'
+var interactButton = loadSecureAsset('extraResources/interactButton.png')
 //#region main menu buttons + back
 // images and sources for each button   (s = selected, u = unselected)
-var playButtonS = new Image()
-playButtonS.src = 'mainMenuText/playSelected.png'
-var playButtonU = new Image()
-playButtonU.src = 'mainMenuText/playUnselected.png'
-var tutorialButtonS = new Image()
-tutorialButtonS.src = 'mainMenuText/tutorialSelected.png'
-var tutorialButtonU = new Image()
-tutorialButtonU.src = 'mainMenuText/tutorialUnselected.png'
-var creditsButtonS = new Image()
-creditsButtonS.src = 'mainMenuText/creditsSelected.png'
-var creditsButtonU = new Image()
-creditsButtonU.src = 'mainMenuText/creditsUnselected.png'
-var enterCodeS = new Image()
-enterCodeS.src = 'mainMenuText/enterCodeSelected.png'
-var enterCodeU = new Image()
-enterCodeU.src = 'mainMenuText/enterCodeUnselected.png'
-
-var backS = new Image()
-backS.src = 'mainMenuText/backSelected.png'
-var backU = new Image()
-backU.src = 'mainMenuText/backUnselected.png'
+var playButtonS = loadSecureAsset('mainMenuText/playSelected.png')
+var playButtonU = loadSecureAsset('mainMenuText/playUnselected.png')
+var tutorialButtonS = loadSecureAsset('mainMenuText/tutorialSelected.png')
+var tutorialButtonU = loadSecureAsset('mainMenuText/tutorialUnselected.png')
+var creditsButtonS = loadSecureAsset('mainMenuText/creditsSelected.png')
+var creditsButtonU = loadSecureAsset('mainMenuText/creditsUnselected.png')
+var enterCodeS = loadSecureAsset('mainMenuText/enterCodeSelected.png')
+var enterCodeU = loadSecureAsset('mainMenuText/enterCodeUnselected.png')
+var backS = loadSecureAsset('mainMenuText/backSelected.png')
+var backU = loadSecureAsset('mainMenuText/backUnselected.png')
 //#endregion
 
 //#region tutorial text images
 //images for the tutorial text  P = part L = line (e.g: P1L1 = Part 1 Line 1)
-var P1L1 = new Image()
-P1L1.src = "tutorialText/P1L1.png"
-var P1L2 = new Image()
-P1L2.src = 'tutorialText/P1L2.png'
-var P2L1 = new Image()
-P2L1.src = 'tutorialText/P2L1.png'
-var P2L2 = new Image()
-P2L2.src = 'tutorialText/P2L2.png'
-var P3L1 = new Image()
-P3L1.src = 'tutorialText/P3L1.png'
-var P3L2 = new Image()
-P3L2.src = 'tutorialText/P3L2.png'
-var P4L1 = new Image()
-P4L1.src = 'tutorialText/P4L1.png'
-var P4L2 = new Image()
-P4L2.src = 'tutorialText/P4L2.png'
-var P4L3 = new Image()
-P4L3.src = 'tutorialText/P4L3.png'
-var P5L1 = new Image()
-P5L1.src = 'tutorialText/P5L1.png'
-var P5L2 = new Image()
-P5L2.src = 'tutorialText/P5L2.png'
-var P6L1 = new Image()
-P6L1.src = 'tutorialText/P6L1.png'
-var P6L2 = new Image()
-P6L2.src = 'tutorialText/P6L2.png'
-var P7 = new Image()
-P7.src = 'tutorialText/P7.png'
-var P8 = new Image()
-P8.src = 'tutorialText/P8.png'
-var P9 = new Image()
-P9.src = 'tutorialText/P9.png'
-var P10 = new Image()
-P10.src = 'tutorialText/P10.png'
-var P11 = new Image()
-P11.src = 'tutorialText/P11.png'
-var P12 = new Image()
-P12.src = 'tutorialText/P12.png'
-var zContune = new Image()
-zContune.src = 'tutorialText/ztocontinue.png'
+var P1L1 = loadSecureAsset('tutorialText/P1L1.png')
+var P1L2 = loadSecureAsset('tutorialText/P1L2.png')
+var P2L1 = loadSecureAsset('tutorialText/P2L1.png')
+var P2L2 = loadSecureAsset('tutorialText/P2L2.png')
+var P3L1 = loadSecureAsset('tutorialText/P3L1.png')
+var P3L2 = loadSecureAsset('tutorialText/P3L2.png')
+var P4L1 = loadSecureAsset('tutorialText/P4L1.png')
+var P4L2 = loadSecureAsset('tutorialText/P4L2.png')
+var P4L3 = loadSecureAsset('tutorialText/P4L3.png')
+var P5L1 = loadSecureAsset('tutorialText/P5L1.png')
+var P5L2 = loadSecureAsset('tutorialText/P5L2.png')
+var P6L1 = loadSecureAsset('tutorialText/P6L1.png')
+var P6L2 = loadSecureAsset('tutorialText/P6L2.png')
+var P7 = loadSecureAsset('tutorialText/P7.png')
+var P8 = loadSecureAsset('tutorialText/P8.png')
+var P9 = loadSecureAsset('tutorialText/P9.png')
+var P10 = loadSecureAsset('tutorialText/P10.png')
+var P11 = loadSecureAsset('tutorialText/P11.png')
+var P12 = loadSecureAsset('tutorialText/P12.png')
+var zContune = loadSecureAsset('tutorialText/ztocontinue.png')
 //#endregion
 
 //#region ending text images
-var L1 = new Image()
-L1.src = 'tutorialText/ENDING/L1.png'
-var L2 = new Image()
-L2.src = 'tutorialText/ENDING/L2.png'
-var L3 = new Image()
-L3.src = 'tutorialText/ENDING/L3.png'
-var L4 = new Image()
-L4.src = 'tutorialText/ENDING/L4.png'
+var L1 = loadSecureAsset('tutorialText/ENDING/L1.png')
+var L2 = loadSecureAsset('tutorialText/ENDING/L2.png')
+var L3 = loadSecureAsset('tutorialText/ENDING/L3.png')
+var L4 = loadSecureAsset('tutorialText/ENDING/L4.png')
 //#endregion
 //#region chracters
-var astronautLeft = new Image()
-astronautLeft.src = 'characters/astronautLeft.png'
-var astronautRight = new Image()
-astronautRight.src = 'characters/astronautRight.png'
-var atkBuffC = new Image()
-atkBuffC.src = 'characters/atkBuff.png'
-var defBuffC = new Image()
-defBuffC.src = 'characters/defBuff.png'
-var zombieIdle = new Image()
-zombieIdle.src = 'zombies/zombie_idle.png'
-var zombieFlex = new Image()
-zombieFlex.src = 'zombies/zombie_flex.png'
-var zombieMoving = new Image()
-zombieMoving.src = 'zombies/zombie_moving.png'
+var astronautLeft = loadSecureAsset('characters/astronautLeft.png')
+var astronautRight = loadSecureAsset('characters/astronautRight.png')
+var atkBuffC = loadSecureAsset('characters/atkBuff.png')
+var defBuffC = loadSecureAsset('characters/defBuff.png')
+var zombieIdle = loadSecureAsset('zombies/zombie_idle.png')
+var zombieFlex = loadSecureAsset('zombies/zombie_flex.png')
+var zombieMoving = loadSecureAsset('zombies/zombie_moving.png')
 //#endregion
 
 //#region lore backgrounds
-var P1 = new Image()
-P1.src = 'backgrounds/P1.png' // lab
-var P2 = new Image()
-P2.src = 'backgrounds/P2.png' // lab with errors
-var P3 = new Image()
-P3.src = 'backgrounds/P3.png' // broken town
-var P4 = new Image()
-P4.src = 'backgrounds/P4.png' // space shuttle
-var P5 = new Image()
-P5.src = 'backgrounds/P5.png' // mars
-var P6 = new Image()
-P6.src = 'backgrounds/P6.png' // earth jungle
-
-var battle = new Image()
-battle.src = 'ExtraResources/Battle.png'
-var battleTwo = new Image()
-battleTwo.src = 'ExtraResources/BattleTwo.png'
-var nothing = new Image()
-nothing.src = 'ExtraResources/nothing.png'
+var P1 = loadSecureAsset('backgrounds/P1.png')
+var P2 = loadSecureAsset('backgrounds/P2.png')
+var P3 = loadSecureAsset('backgrounds/P3.png')
+var P4 = loadSecureAsset('backgrounds/P4.png')
+var P5 = loadSecureAsset('backgrounds/P5.png')
+var P6 = loadSecureAsset('backgrounds/P6.png')
+var battle = loadSecureAsset('ExtraResources/Battle.png')
+var battleTwo = loadSecureAsset('ExtraResources/BattleTwo.png')
+var nothing = loadSecureAsset('ExtraResources/nothing.png')
 //#endregion
 
-var marsBackground = new Image()
-marsBackground.src = "backgrounds/marsTest.png"
-var earthBackground = new Image()
-earthBackground.src = 'backgrounds/earthTest.png'
-var tentBackground = new Image()
-tentBackground.src = 'backgrounds/tentbackground.png'
-var trainBackground = new Image()
-trainBackground.src = 'backgrounds/backgroundSubway.png'
-var officeBackground = new Image()
-officeBackground.src = 'backgrounds/office.png'
-var officeBackgroundZ = new Image()
-officeBackgroundZ.src = 'backgrounds/officeZombie.png'
-var labBackground = new Image()
-labBackground.src = 'backgrounds/Lab.png'
+var marsBackground = loadSecureAsset('backgrounds/marsTest.png')
+var earthBackground = loadSecureAsset('backgrounds/earthTest.png')
+var tentBackground = loadSecureAsset('backgrounds/tentbackground.png')
+var trainBackground = loadSecureAsset('backgrounds/backgroundSubway.png')
+var officeBackground = loadSecureAsset('backgrounds/office.png')
+var officeBackgroundZ = loadSecureAsset('backgrounds/officeZombie.png')
+var labBackground = loadSecureAsset('backgrounds/Lab.png')
 //starts the canvas when the window opens
-window.onload=startCanvas
+window.onload=startCanvasz
 
 function startCanvas(){
 	ctx=document.getElementById("myCanvas").getContext("2d")
@@ -696,6 +465,14 @@ function startCanvas(){
  	playerYPosition = 180
 }
 function updateCanvas(){
+	if (assetsLoaded < totalAssets) {
+		ctx.fillStyle = 'black';
+		ctx.fillRect(0, 0, WIDTH, HEIGHT);
+		ctx.fillStyle = 'white';
+		ctx.font = "20px monospace";
+		ctx.fillText("LOADING GAME FILES: " + assetsLoaded + " / " + totalAssets, 50, 240);
+		return; 
+	}
 	// reset the canvas
 	ctx.fillStyle = 'white'
 	ctx.fillRect(0,0,WIDTH, HEIGHT)	
