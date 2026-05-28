@@ -764,7 +764,7 @@ function drawBorders(){
 		for (var i = 0; i < 15; i++){
 			ctx.fillRect(borderXPosition,475,50,5)
 			borderXPosition = borderXPosition + 50
-			console.log(borderXPosition)
+			//console.log(borderXPosition)
 		}
 	} else if (movingUp){
 		var borderXPosition = 0
@@ -772,7 +772,7 @@ function drawBorders(){
 		for (var i = 0; i < 15; i++){
 			ctx.fillRect(borderXPosition,0,50,5)
 			borderXPosition = borderXPosition + 50
-			console.log(borderXPosition)
+			//console.log(borderXPosition)
 		}
 	} else if (movingLeft){
 		var borderYPosition = 0
@@ -780,7 +780,7 @@ function drawBorders(){
 		for (var i = 0; i < 15; i++){
 			ctx.fillRect(0,borderYPosition,5,50)
 			borderYPosition = borderYPosition + 50
-			console.log(borderYPosition)
+			//console.log(borderYPosition)
 		}
 	} else if (movingRight){
 		var borderYPosition = 0
@@ -788,7 +788,7 @@ function drawBorders(){
 		for (var i = 0; i < 15; i++){
 			ctx.fillRect(635,borderYPosition,5,50)
 			borderYPosition = borderYPosition + 50
-			console.log(borderYPosition)
+			//console.log(borderYPosition)
 		}
 	}
 }
@@ -3196,7 +3196,7 @@ function keyDownFunction(keyboardEvent){
 	} else if (stage == 105){
 		if (keyDown == 'z' || keyDown == 'Z'){
 			ending++
-			console.log(ending)
+			//console.log(ending)
 		}
 	}
 }
