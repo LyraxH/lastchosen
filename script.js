@@ -164,6 +164,10 @@ var dia701 = loadSecureAsset('dialogue/dia701.png')
 var yesReady = loadSecureAsset('dialogue/yesReady.png')
 var noReady = loadSecureAsset('dialogue/noReady.png')
 
+var BGxPosition = 0
+var BGyPosition = 0
+var startingStage = 0
+
 //#region save screens
 var SavedTooEarly = loadSecureAsset('inventory/GameSavedTooEarly.png')
 var cantSave = loadSecureAsset('inventory/YouCantSaveHere.png')
